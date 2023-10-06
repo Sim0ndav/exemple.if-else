@@ -24,13 +24,14 @@ public class App {
 
             System.out.println("Félicitations ! Vous avez rempli le quota de ventes. ");
         }
-        // sinon nombre de ventes manquantes pour atteindre quota + salaire ne change
-        // pas
+        // si le nombres de ventes est tout juste au quota alors affiche tout juste +
+        // ajout de prime au salaire de base
         else if (nbDeVentes == quota) {
             salaireFinal = salaireDeBase + primePotentielle;
             System.out.println("Tout juste !");
         }
-
+        // sinon nombre de ventes manquantes pour atteindre quota + salaire ne change
+        // pas
         else {
             int nbDeVentesManquantes = quota - nbDeVentes;
             System.out.println("Il vous manque " + nbDeVentesManquantes + " ventes pour atteindre le quota.");
