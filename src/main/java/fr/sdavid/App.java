@@ -17,15 +17,27 @@ public class App {
         int nbDeVentes = clavier.nextInt();
         clavier.close();
 
-        if (nbDeVentes >= quota) {
+        // si quota valide alors félicitations + ajout de prime au salaire de base.
+        if (nbDeVentes > quota) {
+
             salaireFinal = salaireDeBase + primePotentielle;
+
             System.out.println("Félicitations ! Vous avez rempli le quota de ventes. ");
-        } else {
+        }
+        // sinon nombre de ventes manquantes pour atteindre quota + salaire ne change
+        // pas
+        else if (nbDeVentes == quota) {
+            salaireFinal = salaireDeBase + primePotentielle;
+            System.out.println("Tout juste !");
+        }
+
+        else {
             int nbDeVentesManquantes = quota - nbDeVentes;
             System.out.println("Il vous manque " + nbDeVentesManquantes + " ventes pour atteindre le quota.");
         }
 
-        System.out.println("Votre salaire sera de " + salaireFinal + " euros ");
+        // affichage du salaire final
+        System.out.println("Votre salaire sera de " + salaireFinal + " euros. ");
     }
 
 }
